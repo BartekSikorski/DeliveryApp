@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Content;
 
 namespace DeliveryApp.Droid
 {
@@ -31,6 +32,8 @@ namespace DeliveryApp.Droid
 
         private void RegisterButton_Click(object sender, System.EventArgs e)
         {
+            var intent = new Intent(this, typeof(RegisterActivity));
+            StartActivity(intent);
         }
 
         private void SigninButtom_Click(object sender, System.EventArgs e)
