@@ -20,7 +20,7 @@ namespace DeliveryApp.Droid
             SetContentView(Resource.Layout.activity_main);
 
             emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
-            emailEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
+            passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
             signinButtom = FindViewById<Button>(Resource.Id.signinButton);
 
             registerButton = FindViewById<Button>(Resource.Id.registerButton);
@@ -33,6 +33,9 @@ namespace DeliveryApp.Droid
         private void RegisterButton_Click(object sender, System.EventArgs e)
         {
             var intent = new Intent(this, typeof(RegisterActivity));
+            intent.PutExtra("email", emailEditText.Text);
+            intent.PutExtra("password", passwordEditText.Text);
+
             StartActivity(intent);
         }
 

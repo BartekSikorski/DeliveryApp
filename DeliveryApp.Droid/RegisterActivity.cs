@@ -32,6 +32,10 @@ namespace DeliveryApp.Droid
 
             registerUserButton.Click += RegisterUserButton_Click;
 
+            var email = Intent.GetStringExtra("email");
+            var password = Intent.GetStringExtra("password");
+            registerEmailEditText.Text = email;
+            registerPasswordEditText.Text = password;
         }
 
         private void RegisterUserButton_Click(object sender, EventArgs e)
